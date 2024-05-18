@@ -360,6 +360,13 @@ impl<'a> Commands<'a> {
     }
 }
 
+impl<'a> From<Vec<Command<'a>>> for Commands<'a> {
+    fn from(commands: Vec<Command<'a>>) -> Self {
+        Self(commands)
+    }
+}
+
+
 #[test]
 fn test_get_command_line_nonoverlapping() {
     let cmd = Command::new_parametrized(

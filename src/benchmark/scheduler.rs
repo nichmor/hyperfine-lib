@@ -14,7 +14,7 @@ pub struct Scheduler<'a> {
     commands: &'a Commands<'a>,
     options: &'a Options,
     export_manager: &'a ExportManager,
-    results: Vec<BenchmarkResult>,
+    pub results: Vec<BenchmarkResult>,
 }
 
 impl<'a> Scheduler<'a> {

@@ -1,20 +1,21 @@
 [package]
-authors = ["David Peter <mail@david-peter.de>"]
+authors = ["Nichita Morcotilo <nmorkotilo@gmail.com>"]
 categories = ["command-line-utilities"]
-description = "A command-line benchmarking tool"
+description = "A command-line benchmarking tool ( with lib support ) "
 homepage = "https://github.com/sharkdp/hyperfine"
 license = "MIT OR Apache-2.0"
-name = "hyperfine"
+name = "hyperfine-lib"
 readme = "README.md"
-repository = "https://github.com/sharkdp/hyperfine"
+repository = "https://github.com/nichmor/hyperfine-lib"
 version = "1.18.0"
-edition = "2018"
-build = "build.rs"
+edition = "2021"
+# build = "build.rs"
 rust-version = "1.70.0"
 
-[features]
-# Use the nightly feature windows_process_extensions_main_thread_handle
-windows_process_extensions_main_thread_handle = []
+# [features]
+# # Use the nightly feature windows_process_extensions_main_thread_handle
+# windows_process_extensions_main_thread_handle = []
+# std = []
 
 [dependencies]
 colored = "2.1"
@@ -50,7 +51,7 @@ nix = { version = "0.27.1", features = ["zerocopy"] }
 [dependencies.clap]
 version = "4"
 default-features = false
-features = ["suggestions", "color", "wrap_help", "cargo", "help", "usage", "error-context"]
+features = ["suggestions", "color", "wrap_help", "cargo", "help", "usage", "error-context", "std"]
 
 [dev-dependencies]
 approx = "0.5"
@@ -58,11 +59,11 @@ assert_cmd = "2.0"
 predicates = "3.0"
 tempfile = "3.9"
 
-[build-dependencies]
-clap = "4.4.12"
-clap_complete = "4.2.1"
+# [build-dependencies]
+# clap = "4.4.12"
+# clap_complete = "4.2.1"
 
-[profile.release]
-lto = true
-strip = true
-codegen-units = 1
+# [profile.release]
+# lto = true
+# strip = true
+# codegen-units = 1
